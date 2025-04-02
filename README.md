@@ -1,9 +1,11 @@
-# QR Code Generator Pro  
-🚀 Um gerador de QR Codes personalizável, desenvolvido com HTML, CSS e JavaScript.  
+QR Code Generator Pro
 
-## 📌 Funcionalidades  
-- Geração de QR Codes personalizados  
-- Download em PNG e SVG  
-- Interface responsiva  
+🚀 A customizable QR Code generator built with HTML, CSS, and JavaScript.
 
-## 🔗 Acesse: https://linkarqr.netlify.app/
+📌 Features
+
+Generate personalized QR Codes
+Download in PNG and SVG formats
+Responsive interface
+
+🔗 Access it here: https://linkarqr.netlify.app/
