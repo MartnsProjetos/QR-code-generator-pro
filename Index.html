@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator Pro | Martins_dev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-qrcode"></i>
+                QR<span>Pro</span>
+            </a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Features</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>QR Code Generator Pro</h1>
+        <p>Transforme qualquer texto ou link em QR code em segundos com nossa ferramenta avançada e personalizável</p>
+    </section>
+
+    <div class="container">
+        <div class="qr-generator">
+            <h2 class="section-title">
+                <i class="fas fa-magic"></i>
+                Crie seu QR Code personalizado
+            </h2>
+            
+            <div class="input-group">
+                <label for="content">Conteúdo do QR Code:</label>
+                <textarea id="content" placeholder="Cole um link ou escreva qualquer texto para gerar o QR code..."></textarea>
+            </div>
+
+            <div class="options-container">
+                <h3 class="options-title">
+                    <i class="fas fa-sliders-h"></i>
+                    Opções de personalização
+                </h3>
+                
+                <div class="options-grid">
+                    <div class="option-item">
+                        <div class="option-label">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            Tamanho:
+                        </div>
+                        <input type="range" id="size" min="100" max="500" value="250" step="10">
+                        <div id="size-value" style="font-size: 0.9rem; color: var(--gray); text-align: center;">250px</div>
+                    </div>
+                    
+                    <div class="option-item">
+                        <div class="option-label">
+                            <i class="fas fa-fill-drip"></i>
+                            Cor do QR:
+                        </div>
+                        <div class="color-option">
+                            <div class="color-preview" id="fg-preview" style="background-color: #000000;"></div>
+                            <input type="color" id="fgColor" value="#000000" class="color-picker">
+                            <span id="fg-color-value" style="font-size: 0.9rem; color: var(--gray);">#000000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="option-item">
+                        <div class="option-label">
+                            <i class="fas fa-fill"></i>
+                            Cor de fundo:
+                        </div>
+                        <div class="color-option">
+                            <div class="color-preview" id="bg-preview" style="background-color: #FFFFFF;"></div>
+                            <input type="color" id="bgColor" value="#FFFFFF" class="color-picker">
+                            <span id="bg-color-value" style="font-size: 0.9rem; color: var(--gray);">#FFFFFF</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="generate-btn" class="btn btn-lg">
+                <i class="fas fa-qrcode"></i>
+                Gerar QR Code
+            </button>
+
+            <div class="result-container animate-fade" id="result">
+                <h2 class="section-title">
+                    <i class="fas fa-check-circle"></i>
+                    QR Code Gerado
+                </h2>
+                
+                <div class="result-content">
+                    <div class="result-preview">
+                        <div class="qr-display" id="qr-display">
+                            <div class="qr-marker qr-marker-tl"></div>
+                            <div class="qr-marker qr-marker-tr"></div>
+                            <div class="qr-marker qr-marker-bl"></div>
+                            <div class="qr-marker qr-marker-br"></div>
+                            <div id="qrcode"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-details">
+                        <div class="result-info">
+                            <h3 class="result-info-title">
+                                <i class="fas fa-info-circle"></i>
+                                Informações
+                            </h3>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Conteúdo:</div>
+                                <div class="info-value" id="info-content">-</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Tamanho:</div>
+                                <div class="info-value" id="info-size">-</div>
+                            </div>
+                            
+Para terminar o código HTML da aplicação de gerador de QR code, vou completar a parte que falta do HTML, incluindo o restante da seção de informações, botões de download e o footer, além do script JavaScript necessário para a funcionalidade.
+
+```html
+                            <div class="info-item">
+                                <div class="info-label">Cor do QR:</div>
+                                <div class="info-value" id="info-fgColor">-</div>
+                            </div>
+                            
+                            <div class="info-item">
+                                <div class="info-label">Cor de fundo:</div>
+                                <div class="info-value" id="info-bgColor">-</div>
+                            </div>
+                        </div>
+                        
+                        <div class="download-msg">
+                            <i class="fas fa-info-circle"></i>
+                            Seu QR Code está pronto! Escolha um formato para download.
+                        </div>
+                        
+                        <div class="download-options">
+                            <button id="download-png" class="btn">
+                                <i class="fas fa-download"></i>
+                                Baixar como PNG
+                            </button>
+                            
+                            <button id="download-svg" class="btn btn-success">
+                                <i class="fas fa-download"></i>
+                                Baixar como SVG
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                QR<span>Pro</span> | <span class="copyright">&copy; 2025 Martins_dev</span>
+            </div>
+            
+            <div class="footer-links">
+                <a href="https://github.com/MartnsProjetos" class="footer-link">Git Hub</a>
+                <a href="https://www.linkedin.com/in/matheus-martins-ribeiro-25901428b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="footer-link">LinkedIn</a>
+                <a href="https://wa.me/5511963822159" class="footer-link">Wathsapp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+    
+  
+      
+    </body>
+</html>
+```
