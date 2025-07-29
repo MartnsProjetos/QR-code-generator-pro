@@ -28,7 +28,6 @@
                 sizeValue.textContent = this.value + 'px';
             });
             
-            // Update color previews
             fgColorInput.addEventListener('input', function() {
                 fgPreview.style.backgroundColor = this.value;
                 fgColorValue.textContent = this.value;
@@ -51,7 +50,6 @@
                 
                 qrcodeContainer.innerHTML = '';
                 
-                // Create new QR code
                 qrcode = new QRCode(qrcodeContainer, {
                     text: content,
                     width: parseInt(sizeInput.value),
